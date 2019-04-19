@@ -1,30 +1,8 @@
 $(document).ready(onReady);
 
 let employeeArray = [];
+let monthlyBudget = 20000;
 
-employeeArray.push({
-    firstName: 'Jen',
-    lastName: 'Barber',
-    id: 4521,
-    title: 'Team Lead',
-    annualSalary: 800000,
-});
-
-employeeArray.push({
-    firstName: 'Maurice',
-    lastName: 'Moss',
-    id: 8724,
-    title: 'Support Team',
-    annualSalary: 58000,
-});
-
-employeeArray.push({
-    firstName: 'Roy',
-    lastName: 'Smith',
-    id: 9623,
-    title: 'Quality Assurance',
-    annualSalary: 48000,
-});
 function clickSubmitButton(){
     event.preventDefault();
     let entry = {};
@@ -33,9 +11,9 @@ function clickSubmitButton(){
     });
     $(this).trigger('reset');
     employeeArray.push(entry);
-    monthlyCosts();
+    render();
 }
-function monthlyCosts(){
+function render(){
     $('.container').empty();
     for (let i = 0; i < employeeArray.length; i++){
         $('.container').append('<div></div>');
@@ -54,11 +32,11 @@ function monthlyCosts(){
 function clickDeleteButton(){
     let employeeToDelete = $(this).parent().data('id');
     employeeArray.splice(employeeToDelete, 1);
-    monthlyCosts();
+    render();
 }
 
 function onReady(){
-    monthlyCosts();
+    render();
 
     $('.container').on('click', '.deleteBtn', clickDeleteButton);
     $('#newEmployee').on('submit', clickSubmitButton);
@@ -66,3 +44,4 @@ function onReady(){
 
     console.log('Hello');
 }
+
