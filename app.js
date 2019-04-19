@@ -28,9 +28,18 @@ employeeArray.push({
 
 function monthlyCosts(employee){
     for (let i = 0; i < employee.length; i++){
-        console.log('Hey, I work.');
-    }
+        $('.container'.append('<div></div>'));
+        let newDiv = $('.container').children().last();
+        let newEmployee = employee[i];
+        newDiv.append('<p>' + newEmployee.firstName+ '</p>');
+        newDiv.append('<p>' + newEmployee.lastName+ '</p>');
+        newDiv.append('<p>' + newEmployee.id+ '</p>');
+        newDiv.append('<p>' + newEmployee.title+ '</p>');
+        newDiv.append('<p>' + newEmployee.annualSalary+ '</p>');
+        newDiv.append('<button class = "deleteBtn">Delete</button>');
+    } console.log('Im working');
 }
 
 function onReady(){
-    console.log('Hello');
+    console.log('im working');
+}
