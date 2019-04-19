@@ -25,7 +25,8 @@ employeeArray.push({
     title: 'Quality Assurance',
     annualSalary: 48000,
 });
-function clickSubmitButton(){event.preventDefault();
+function clickSubmitButton(){
+    event.preventDefault();
     let entry = {};
     $(this).serializeArray().forEach(function (item) {
         entry[item.name] = item.value;
@@ -51,4 +52,7 @@ function monthlyCosts(){
 
 function onReady(){
     monthlyCosts();
+    $('#newEmployee').on('click', clickSubmitButton);
+    
+    console.log('Hello');
 }
