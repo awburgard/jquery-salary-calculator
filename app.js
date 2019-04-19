@@ -27,6 +27,7 @@ function render(){
         newDiv.append('<p>' + newEmployee.annualSalary + '</p>');
         newDiv.append('<button class="deleteBtn">Delete</button>');
     }
+    calculateMonthly();
 }
 
 function clickDeleteButton(){
@@ -40,8 +41,19 @@ function onReady(){
 
     $('.container').on('click', '.deleteBtn', clickDeleteButton);
     $('#newEmployee').on('submit', clickSubmitButton);
+    calculateMonthly();
 
 
     console.log('Hello');
 }
 
+function calculateMonthly (){
+    let totalSalary = 0;
+    for (let i=0; i < employeeArray.length; i++){
+        let employee = employeeArray[i];
+        // let monthlySalary = employee.annualSalary / 12;
+        // totalSalary += monthlySalary;
+        totalSalary+= parseInt(employee.annualSalary);
+    }
+    $('#totalMonthly').text('Total Monthly Budget: $'+ totalSalary);
+  };
