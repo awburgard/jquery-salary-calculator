@@ -20,12 +20,12 @@ function render(){
         let newDiv = $('.container').children().last();
         let newEmployee = employeeArray[i];
         newDiv.data ('id',i);
-        newDiv.append('<p>' + newEmployee.firstName + '</p>');
-        newDiv.append('<p>' + newEmployee.lastName + '</p>');
-        newDiv.append('<p>' + newEmployee.id + '</p>');
-        newDiv.append('<p>' + newEmployee.title + '</p>');
-        newDiv.append('<p>' + newEmployee.annualSalary + '</p>');
-        newDiv.append('<button class="deleteBtn">Delete</button>');
+        newDiv.append('<p>' + newEmployee.firstName + '</p>').addClass('formatInput');
+        newDiv.append('<p>' + newEmployee.lastName + '</p>').addClass('formatInput');
+        newDiv.append('<p>' + newEmployee.id + '</p>').addClass('formatInput');
+        newDiv.append('<p>' + newEmployee.title + '</p>').addClass('formatInput');
+        newDiv.append('<p>' + newEmployee.annualSalary + '</p>').addClass('formatInput');
+        newDiv.append('<button class="deleteBtn">Delete</button>').addClass('formatInput');
     }
     calculateMonthly();
 }
