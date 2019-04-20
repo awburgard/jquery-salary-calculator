@@ -57,7 +57,7 @@ function calculateMonthly (){
     }
     $('#totalMonthly').text('Total Monthly Budget: $'+ monthlyAvg);
     if (monthlyAvg > monthlyBudget){
-        $('#totalMonthly').css('background-color', 'red');
+        $('#totalMonthly').addClass('red');
     }
   };
 
