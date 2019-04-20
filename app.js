@@ -3,7 +3,7 @@ $(document).ready(onReady);
 let employeeArray = [];
 let monthlyBudget = 20000;
 
-function clickSubmitButton(){
+function clickSubmitButton() {
     event.preventDefault();
     let entry = {};
     $(this).serializeArray().forEach(function (item) {
@@ -13,14 +13,14 @@ function clickSubmitButton(){
     employeeArray.push(entry);
     render();
 }
-function render(){
+function render() {
     $('.container').empty();
-    for (let i = 0; i < employeeArray.length; i++){
+    for (let i = 0; i < employeeArray.length; i++) {
         $('.container').append('<div></div>').append('<table></table>');
         let newDiv = $('.container').children().last();
         let newEmployee = employeeArray[i];
-        newDiv.data ('id',i);
-        newDiv.append('<p>'+ 'First Name: ' + newEmployee.firstName + '</p>').addClass('formatInput');
+        newDiv.data('id', i);
+        newDiv.append('<p>' + 'First Name: ' + newEmployee.firstName + '</p>').addClass('formatInput');
         newDiv.append('<p>' + 'Last Name: ' + newEmployee.lastName + '</p>').addClass('formatInput');
         newDiv.append('<p>' + 'ID: ' + newEmployee.id + '</p>').addClass('formatInput');
         newDiv.append('<p>' + 'Title: ' + newEmployee.title + '</p>').addClass('formatInput');
@@ -30,13 +30,13 @@ function render(){
     calculateMonthly();
 }
 
-function clickDeleteButton(){
+function clickDeleteButton() {
     let employeeToDelete = $(this).parent().data('id');
     employeeArray.splice(employeeToDelete, 1);
     render();
 }
 
-function onReady(){
+function onReady() {
     render();
 
     $('.container').on('click', '.deleteBtn', clickDeleteButton);
@@ -44,17 +44,17 @@ function onReady(){
     calculateMonthly();
 }
 
-function calculateMonthly (){
+function calculateMonthly() {
     let totalSalary = 0;
     let monthlyAvg = 0;
-    for (let i=0; i < employeeArray.length; i++){
+    for (let i = 0; i < employeeArray.length; i++) {
         let employee = employeeArray[i];
         monthlyAvg = employee.annualSalary / 12;
         totalSalary += monthlyAvg;
         monthlyAvg = parseInt(totalSalary);
     }
-    $('#totalMonthly').text('Total Monthly Budget: $'+ monthlyAvg);
-    if (monthlyAvg > monthlyBudget){
+    $('#totalMonthly').text('Total Monthly Budget: $' + monthlyAvg);
+    if (monthlyAvg > monthlyBudget) {
         $('#totalMonthly').addClass('red');
     }
-  };
+};
