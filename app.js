@@ -2,7 +2,6 @@ $(document).ready(onReady);
 
 let employeeArray = [];
 let monthlyBudget = 20000;
-
 function clickSubmitButton(){
     event.preventDefault();
     let entry = {};
@@ -49,11 +48,20 @@ function onReady(){
 
 function calculateMonthly (){
     let totalSalary = 0;
+    let monthlyAvg = 0;
     for (let i=0; i < employeeArray.length; i++){
         let employee = employeeArray[i];
-        // let monthlySalary = employee.annualSalary / 12;
-        // totalSalary += monthlySalary;
-        totalSalary+= parseInt(employee.annualSalary);
+        monthlyAvg = employee.annualSalary / 12;
+        totalSalary += monthlyAvg;
+        monthlyAvg = parseInt(totalSalary);
     }
-    $('#totalMonthly').text('Total Monthly Budget: $'+ totalSalary);
+    $('#totalMonthly').text('Total Monthly Budget: $'+ monthlyAvg);
+    if (monthlyAvg > monthlyBudget){
+        $('#totalMonthly').css('background-color', 'red');
+    }
   };
+
+  // What I need to do:
+  // 1: add total annual saleries together
+  // 2: divide annual saleries by 12
+  // 3: if statment that somehow turns budget red if it goes beyond 20000
