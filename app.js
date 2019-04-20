@@ -16,15 +16,15 @@ function clickSubmitButton(){
 function render(){
     $('.container').empty();
     for (let i = 0; i < employeeArray.length; i++){
-        $('.container').append('<div></div>');
+        $('.container').append('<div></div>').append('<table></table>');
         let newDiv = $('.container').children().last();
         let newEmployee = employeeArray[i];
         newDiv.data ('id',i);
-        newDiv.append('<p>' + newEmployee.firstName + '</p>').addClass('formatInput');
-        newDiv.append('<p>' + newEmployee.lastName + '</p>').addClass('formatInput');
-        newDiv.append('<p>' + newEmployee.id + '</p>').addClass('formatInput');
-        newDiv.append('<p>' + newEmployee.title + '</p>').addClass('formatInput');
-        newDiv.append('<p>' + newEmployee.annualSalary + '</p>').addClass('formatInput');
+        newDiv.append('<p>'+ 'First Name: ' + newEmployee.firstName + '</p>').addClass('formatInput');
+        newDiv.append('<p>' + 'Last Name: ' + newEmployee.lastName + '</p>').addClass('formatInput');
+        newDiv.append('<p>' + 'ID: ' + newEmployee.id + '</p>').addClass('formatInput');
+        newDiv.append('<p>' + 'Title: ' + newEmployee.title + '</p>').addClass('formatInput');
+        newDiv.append('<p>' + 'Annual Salary: ' + newEmployee.annualSalary + '</p>').addClass('formatInput');
         newDiv.append('<button class="deleteBtn">Delete</button>').addClass('formatInput');
     }
     calculateMonthly();

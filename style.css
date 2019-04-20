@@ -8,33 +8,37 @@ body {
 
 .header {
     background-color: #263D62;
+    color: #F2F2F2;
     text-align: center;
     padding: 30px;
-    color: #F2F2F2;
     margin: 0px;
 }
 
 .submitBtn {
-    color: #F2F2F2;
     background-color: #263D62;
+    color: #F2F2F2;
     border-radius: 12px;
-    display: inline-block;
+    display: inline;
     font-size: 16px;
 }
 
 h2 {
     color: #263D62;
-    padding: 5px;
     margin-left: 25px;
-}
-
-#newEmployee{
-    margin: 25px;
+    margin-bottom: 0px;
 }
 
 .formatInput{
-    margin: 25px;
+    color: #263D62;
+    margin-left: 25px;
+    display: inline-block;
 }
+
+.container{
+    margin: 0px;
+    display: inline;
+}
+
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
