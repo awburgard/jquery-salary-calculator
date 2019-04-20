@@ -2,6 +2,7 @@ $(document).ready(onReady);
 
 let employeeArray = [];
 let monthlyBudget = 20000;
+
 function clickSubmitButton(){
     event.preventDefault();
     let entry = {};
@@ -41,9 +42,6 @@ function onReady(){
     $('.container').on('click', '.deleteBtn', clickDeleteButton);
     $('#newEmployee').on('submit', clickSubmitButton);
     calculateMonthly();
-
-
-    console.log('Hello');
 }
 
 function calculateMonthly (){
@@ -60,8 +58,3 @@ function calculateMonthly (){
         $('#totalMonthly').addClass('red');
     }
   };
-
-  // What I need to do:
-  // 1: add total annual saleries together
-  // 2: divide annual saleries by 12
-  // 3: if statment that somehow turns budget red if it goes beyond 20000

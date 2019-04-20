@@ -1,3 +1,20 @@
 .red{
     color: #8C030E;
 }
+
+.header{
+     background-color: #263D62;
+     text-align: center;
+     padding: 30px;
+     color: #F2F2F2;
+     margin-top: 0px;
+}
+
+
+.submitBtn{
+    color: #F2F2F2;
+    background-color: #263D62;
+    border-radius: 12px;
+    display: inline-block;
+}
+
