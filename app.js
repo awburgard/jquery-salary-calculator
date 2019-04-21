@@ -16,7 +16,7 @@ function clickSubmitButton() {
 function render() {
     $('.container').empty();
     for (let i = 0; i < employeeArray.length; i++) {
-        $('.container').append('<div></div>').append('<table></table>');
+        $('.container').append('<div></div>');
         let newDiv = $('.container').children().last();
         let newEmployee = employeeArray[i];
         newDiv.data('id', i);
